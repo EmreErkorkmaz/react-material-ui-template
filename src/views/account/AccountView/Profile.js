@@ -16,10 +16,10 @@ import {
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
-  city: 'Los Angeles',
-  country: 'USA',
-  jobTitle: 'Senior Developer',
-  name: 'Katarina Smith',
+  city: 'Yalova',
+  country: 'TR',
+  jobTitle: 'Junior Web Developer',
+  name: 'Emre Erkorkmaz',
   timezone: 'GTM-7'
 };
 
@@ -78,7 +78,7 @@ const Profile = ({ className, ...rest }) => {
           fullWidth
           variant="text"
         >
-          Upload picture
+          Fotoğrafı Güncelle
         </Button>
       </CardActions>
     </Card>

@@ -52,13 +52,13 @@ const Budget = ({ className, ...rest }) => {
               gutterBottom
               variant="h6"
             >
-              BUDGET
+              BÜTÇE
             </Typography>
             <Typography
               color="textPrimary"
               variant="h3"
             >
-              $24,000
+              24,000₺
             </Typography>
           </Grid>
           <Grid item>
@@ -83,7 +83,7 @@ const Budget = ({ className, ...rest }) => {
             color="textSecondary"
             variant="caption"
           >
-            Since last month
+            Geçen aydan itibaren
           </Typography>
         </Box>
       </CardContent>

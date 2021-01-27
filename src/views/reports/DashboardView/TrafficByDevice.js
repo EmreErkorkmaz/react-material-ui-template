@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
@@ -24,13 +24,27 @@ const useStyles = makeStyles(() => ({
 }));
 
 const TrafficByDevice = ({ className, ...rest }) => {
+  const [randomData, setRandomData] = useState([]);
   const classes = useStyles();
   const theme = useTheme();
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const mobile = Math.floor((Math.random() * 10) + 20);
+      const tablet = Math.floor((Math.random() * 10) + 5);
+      const desktop = 100 - (mobile + tablet);
+      setRandomData([desktop, tablet, mobile]);
+    }, 2000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const data = {
     datasets: [
       {
-        data: [63, 15, 22],
+        data: randomData,
         backgroundColor: [
           colors.indigo[500],
           colors.red[600],
@@ -68,20 +82,20 @@ const TrafficByDevice = ({ className, ...rest }) => {
 
   const devices = [
     {
-      title: 'Desktop',
-      value: 63,
+      title: 'Bilgisayar',
+      value: randomData[0],
       icon: LaptopMacIcon,
       color: colors.indigo[500]
     },
     {
       title: 'Tablet',
-      value: 15,
+      value: randomData[1],
       icon: TabletIcon,
       color: colors.red[600]
     },
     {
-      title: 'Mobile',
-      value: 23,
+      title: 'Mobil',
+      value: randomData[2],
       icon: PhoneIcon,
       color: colors.orange[600]
     }
@@ -92,7 +106,7 @@ const TrafficByDevice = ({ className, ...rest }) => {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title="Traffic by Device" />
+      <CardHeader title="Aygıt Trafiği" />
       <Divider />
       <CardContent>
         <Box

@@ -73,7 +73,7 @@ const LatestProducts = ({ className, ...rest }) => {
     >
       <CardHeader
         subtitle={`${products.length} in total`}
-        title="Latest Products"
+        title="Son Ürünler"
       />
       <Divider />
       <List>
@@ -114,7 +114,7 @@ const LatestProducts = ({ className, ...rest }) => {
           size="small"
           variant="text"
         >
-          View all
+          TÜMÜNÜ GÖR
         </Button>
       </Box>
     </Card>

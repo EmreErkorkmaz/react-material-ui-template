@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
@@ -21,19 +21,36 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Sales = ({ className, ...rest }) => {
+  const [randomData, setRandomData] = useState([]);
+  const [secondRandomData, setSecondRandomData] = useState([]);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const thisYearData = [];
+      const lastYearData = [];
+      for (let index = 0; index < 6; index++) {
+        thisYearData.push(Math.floor(Math.random() * 30));
+        lastYearData.push(Math.floor(Math.random() * 30));
+      }
+      setRandomData(thisYearData);
+      setSecondRandomData(lastYearData);
+    }, 2000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
   const classes = useStyles();
   const theme = useTheme();
-
   const data = {
     datasets: [
       {
         backgroundColor: colors.indigo[500],
-        data: [18, 5, 19, 27, 29, 19, 20],
+        data: randomData,
         label: 'This year'
       },
       {
         backgroundColor: colors.grey[200],
-        data: [11, 20, 12, 29, 30, 25, 13],
+        data: secondRandomData,
         label: 'Last year'
       }
     ],
@@ -107,10 +124,10 @@ const Sales = ({ className, ...rest }) => {
             size="small"
             variant="text"
           >
-            Last 7 days
+            Son 7 Gün
           </Button>
         )}
-        title="Latest Sales"
+        title="Son Satışlar"
       />
       <Divider />
       <CardContent>
@@ -136,7 +153,7 @@ const Sales = ({ className, ...rest }) => {
           size="small"
           variant="text"
         >
-          Overview
+          DAHA FAZLA GÖSTER
         </Button>
       </Box>
     </Card>

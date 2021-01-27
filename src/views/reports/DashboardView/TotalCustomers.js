@@ -52,7 +52,7 @@ const TotalCustomers = ({ className, ...rest }) => {
               gutterBottom
               variant="h6"
             >
-              TOTAL CUSTOMERS
+              TÜM MÜŞTERİLER
             </Typography>
             <Typography
               color="textPrimary"
@@ -83,7 +83,7 @@ const TotalCustomers = ({ className, ...rest }) => {
             color="textSecondary"
             variant="caption"
           >
-            Since last month
+            Geçen aydan itibaren
           </Typography>
         </Box>
       </CardContent>

@@ -60,15 +60,15 @@ export default [
   {
     id: uuid(),
     address: {
-      country: 'USA',
-      state: 'Texas',
-      city: 'Dallas',
+      country: 'TR',
+      state: 'Marmara',
+      city: 'Yalova',
       street: '75247'
     },
     avatarUrl: '/static/images/avatars/avatar_6.png',
     createdAt: 1554757200000,
-    email: 'clarke.gillebert@devias.io',
-    name: 'Clarke Gillebert',
+    email: 'emre@emre.com',
+    name: 'Emre Erkorkmaz',
     phone: '972-333-4106'
   },
   {

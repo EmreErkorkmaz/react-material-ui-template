@@ -32,7 +32,7 @@ const LoginView = () => {
   return (
     <Page
       className={classes.root}
-      title="Login"
+      title="Giriş"
     >
       <Box
         display="flex"
@@ -43,12 +43,12 @@ const LoginView = () => {
         <Container maxWidth="sm">
           <Formik
             initialValues={{
-              email: 'demo@devias.io',
+              email: 'emre@emre.com',
               password: 'Password123'
             }}
             validationSchema={Yup.object().shape({
-              email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-              password: Yup.string().max(255).required('Password is required')
+              email: Yup.string().email('Geçersiz email adresi').max(255).required('Email adresinizi giriniz'),
+              password: Yup.string().max(255).required('Şifrenizi giriniz')
             })}
             onSubmit={() => {
               navigate('/app/dashboard', { replace: true });
@@ -69,14 +69,14 @@ const LoginView = () => {
                     color="textPrimary"
                     variant="h2"
                   >
-                    Sign in
+                    Giriş
                   </Typography>
                   <Typography
                     color="textSecondary"
                     gutterBottom
                     variant="body2"
                   >
-                    Sign in on the internal platform
+                    Dahili platfrom ile giriş yapın
                   </Typography>
                 </Box>
                 <Grid
@@ -124,14 +124,14 @@ const LoginView = () => {
                     color="textSecondary"
                     variant="body1"
                   >
-                    or login with email address
+                    ya da email adresinizle giriş yapın
                   </Typography>
                 </Box>
                 <TextField
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
                   helperText={touched.email && errors.email}
-                  label="Email Address"
+                  label="Email Adresi"
                   margin="normal"
                   name="email"
                   onBlur={handleBlur}
@@ -144,7 +144,7 @@ const LoginView = () => {
                   error={Boolean(touched.password && errors.password)}
                   fullWidth
                   helperText={touched.password && errors.password}
-                  label="Password"
+                  label="Parola"
                   margin="normal"
                   name="password"
                   onBlur={handleBlur}
@@ -169,14 +169,14 @@ const LoginView = () => {
                   color="textSecondary"
                   variant="body1"
                 >
-                  Don&apos;t have an account?
+                  Kayıtlı hesabınız yok mu?
                   {' '}
                   <Link
                     component={RouterLink}
                     to="/register"
                     variant="h6"
                   >
-                    Sign up
+                    Kayıt Ol
                   </Link>
                 </Typography>
               </form>

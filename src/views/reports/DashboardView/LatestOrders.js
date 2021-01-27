@@ -31,7 +31,7 @@ const data = [
       name: 'Ekaterina Tankova'
     },
     createdAt: 1555016400000,
-    status: 'pending'
+    status: 'bekliyor'
   },
   {
     id: uuid(),
@@ -41,7 +41,7 @@ const data = [
       name: 'Cao Yu'
     },
     createdAt: 1555016400000,
-    status: 'delivered'
+    status: 'teslim'
   },
   {
     id: uuid(),
@@ -51,7 +51,7 @@ const data = [
       name: 'Alexa Richardson'
     },
     createdAt: 1554930000000,
-    status: 'refunded'
+    status: 'iade'
   },
   {
     id: uuid(),
@@ -61,7 +61,7 @@ const data = [
       name: 'Anje Keizer'
     },
     createdAt: 1554757200000,
-    status: 'pending'
+    status: 'bekliyor'
   },
   {
     id: uuid(),
@@ -71,7 +71,7 @@ const data = [
       name: 'Clarke Gillebert'
     },
     createdAt: 1554670800000,
-    status: 'delivered'
+    status: 'teslim'
   },
   {
     id: uuid(),
@@ -81,7 +81,7 @@ const data = [
       name: 'Adam Denisov'
     },
     createdAt: 1554670800000,
-    status: 'delivered'
+    status: 'teslim'
   }
 ];
 
@@ -101,7 +101,7 @@ const LatestOrders = ({ className, ...rest }) => {
       className={clsx(classes.root, className)}
       {...rest}
     >
-      <CardHeader title="Latest Orders" />
+      <CardHeader title="Son Siparişler" />
       <Divider />
       <PerfectScrollbar>
         <Box minWidth={800}>
@@ -109,10 +109,10 @@ const LatestOrders = ({ className, ...rest }) => {
             <TableHead>
               <TableRow>
                 <TableCell>
-                  Order Ref
+                  Sipariş Ref. No.
                 </TableCell>
                 <TableCell>
-                  Customer
+                  Müşteri
                 </TableCell>
                 <TableCell sortDirection="desc">
                   <Tooltip
@@ -123,12 +123,12 @@ const LatestOrders = ({ className, ...rest }) => {
                       active
                       direction="desc"
                     >
-                      Date
+                      Tarih
                     </TableSortLabel>
                   </Tooltip>
                 </TableCell>
                 <TableCell>
-                  Status
+                  Durum
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -149,7 +149,7 @@ const LatestOrders = ({ className, ...rest }) => {
                   </TableCell>
                   <TableCell>
                     <Chip
-                      color="primary"
+                      color={order.status === 'teslim' ? 'primary' : 'default'}
                       label={order.status}
                       size="small"
                     />
@@ -171,7 +171,7 @@ const LatestOrders = ({ className, ...rest }) => {
           size="small"
           variant="text"
         >
-          View all
+          TÜMÜNÜ GÖR
         </Button>
       </Box>
     </Card>

@@ -31,7 +31,7 @@ const RegisterView = () => {
   return (
     <Page
       className={classes.root}
-      title="Register"
+      title="Kayıt"
     >
       <Box
         display="flex"
@@ -50,11 +50,11 @@ const RegisterView = () => {
             }}
             validationSchema={
               Yup.object().shape({
-                email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
-                firstName: Yup.string().max(255).required('First name is required'),
-                lastName: Yup.string().max(255).required('Last name is required'),
-                password: Yup.string().max(255).required('password is required'),
-                policy: Yup.boolean().oneOf([true], 'This field must be checked')
+                email: Yup.string().email('Geçersiz email adresi').max(255).required('Email zorunludur'),
+                firstName: Yup.string().max(255).required('İsim zorunludur'),
+                lastName: Yup.string().max(255).required('Soyisim zorunludur'),
+                password: Yup.string().max(255).required('Parola zorunludur'),
+                policy: Yup.boolean().oneOf([true], 'Kullanıcı sözleşmesini onaylayınız')
               })
             }
             onSubmit={() => {
@@ -76,21 +76,21 @@ const RegisterView = () => {
                     color="textPrimary"
                     variant="h2"
                   >
-                    Create new account
+                    Yeni hesap oluştur
                   </Typography>
                   <Typography
                     color="textSecondary"
                     gutterBottom
                     variant="body2"
                   >
-                    Use your email to create new account
+                    Email adresinizle yeni kayıt oluşturun
                   </Typography>
                 </Box>
                 <TextField
                   error={Boolean(touched.firstName && errors.firstName)}
                   fullWidth
                   helperText={touched.firstName && errors.firstName}
-                  label="First name"
+                  label="İsim"
                   margin="normal"
                   name="firstName"
                   onBlur={handleBlur}
@@ -102,7 +102,7 @@ const RegisterView = () => {
                   error={Boolean(touched.lastName && errors.lastName)}
                   fullWidth
                   helperText={touched.lastName && errors.lastName}
-                  label="Last name"
+                  label="Soyisim"
                   margin="normal"
                   name="lastName"
                   onBlur={handleBlur}
@@ -114,7 +114,7 @@ const RegisterView = () => {
                   error={Boolean(touched.email && errors.email)}
                   fullWidth
                   helperText={touched.email && errors.email}
-                  label="Email Address"
+                  label="Email Adresi"
                   margin="normal"
                   name="email"
                   onBlur={handleBlur}
@@ -127,7 +127,7 @@ const RegisterView = () => {
                   error={Boolean(touched.password && errors.password)}
                   fullWidth
                   helperText={touched.password && errors.password}
-                  label="Password"
+                  label="Parola"
                   margin="normal"
                   name="password"
                   onBlur={handleBlur}
@@ -150,8 +150,6 @@ const RegisterView = () => {
                     color="textSecondary"
                     variant="body1"
                   >
-                    I have read the
-                    {' '}
                     <Link
                       color="primary"
                       component={RouterLink}
@@ -159,8 +157,9 @@ const RegisterView = () => {
                       underline="always"
                       variant="h6"
                     >
-                      Terms and Conditions
+                      Kullanıcı şartları ve koşulları
                     </Link>
+                    {" 'nı okudum"}
                   </Typography>
                 </Box>
                 {Boolean(touched.policy && errors.policy) && (
@@ -177,21 +176,21 @@ const RegisterView = () => {
                     type="submit"
                     variant="contained"
                   >
-                    Sign up now
+                    Kayıt Ol
                   </Button>
                 </Box>
                 <Typography
                   color="textSecondary"
                   variant="body1"
                 >
-                  Have an account?
+                  Kayıtlı Hesabınız var mı?
                   {' '}
                   <Link
                     component={RouterLink}
                     to="/login"
                     variant="h6"
                   >
-                    Sign in
+                    Giriş Yap
                   </Link>
                 </Typography>
               </form>

@@ -37,14 +37,14 @@ const Password = ({ className, ...rest }) => {
     >
       <Card>
         <CardHeader
-          subheader="Update password"
-          title="Password"
+          subheader="Parolayı Güncelle"
+          title="Parola"
         />
         <Divider />
         <CardContent>
           <TextField
             fullWidth
-            label="Password"
+            label="Yeni Parola"
             margin="normal"
             name="password"
             onChange={handleChange}
@@ -54,7 +54,7 @@ const Password = ({ className, ...rest }) => {
           />
           <TextField
             fullWidth
-            label="Confirm password"
+            label="Yeni Parola (Tekrar)"
             margin="normal"
             name="confirm"
             onChange={handleChange}
@@ -73,7 +73,7 @@ const Password = ({ className, ...rest }) => {
             color="primary"
             variant="contained"
           >
-            Update
+            Güncelle
           </Button>
         </Box>
       </Card>

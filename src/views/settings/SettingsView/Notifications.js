@@ -33,8 +33,8 @@ const Notifications = ({ className, ...rest }) => {
     >
       <Card>
         <CardHeader
-          subheader="Manage the notifications"
-          title="Notifications"
+          subheader="Bildirimleri Yönet"
+          title="Bildirimler"
         />
         <Divider />
         <CardContent>
@@ -55,7 +55,7 @@ const Notifications = ({ className, ...rest }) => {
                 gutterBottom
                 variant="h6"
               >
-                Notifications
+                Bildirimler
               </Typography>
               <FormControlLabel
                 control={(
@@ -67,17 +67,17 @@ const Notifications = ({ className, ...rest }) => {
                 control={(
                   <Checkbox defaultChecked />
                 )}
-                label="Push Notifications"
+                label="Bildirim Göster"
               />
               <FormControlLabel
                 control={<Checkbox />}
-                label="Text Messages"
+                label="SMS Bildirimleri"
               />
               <FormControlLabel
                 control={(
                   <Checkbox defaultChecked />
                 )}
-                label="Phone calls"
+                label="Telefon Aramaları"
               />
             </Grid>
             <Grid
@@ -102,13 +102,13 @@ const Notifications = ({ className, ...rest }) => {
               />
               <FormControlLabel
                 control={<Checkbox />}
-                label="Push Notifications"
+                label="Bildirim Göster"
               />
               <FormControlLabel
                 control={(
                   <Checkbox defaultChecked />
                 )}
-                label="Phone calls"
+                label="Telefon Aramaları"
               />
             </Grid>
           </Grid>
@@ -123,7 +123,7 @@ const Notifications = ({ className, ...rest }) => {
             color="primary"
             variant="contained"
           >
-            Save
+            Kaydet
           </Button>
         </Box>
       </Card>
